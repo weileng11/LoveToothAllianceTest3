@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.lovetoothalliance.app.widget.TopBarLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.lovetoothalliance.app.widget.TopBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@mipmap/health_iv"
+            />
+
+    </LinearLayout>
+
+    <com.lovetoothalliance.app.widget.PullToRefreshView
+        android:id="@+id/main_pull_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <com.utils.view.MyListview
+                android:id="@+id/lv_health"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+            </com.utils.view.MyListview>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+    </com.lovetoothalliance.app.widget.PullToRefreshView>
+</LinearLayout>

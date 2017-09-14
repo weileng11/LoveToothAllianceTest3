@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.lovetoothalliance.app.widget.TopBarLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.lovetoothalliance.app.widget.TopBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@mipmap/iv_recode_evaluate" />
+
+                <TextView
+                    android:id="@+id/tv_evaluate_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="xxxxxxxxx" />
+
+            </LinearLayout>
+
+            <View style="@style/view"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <ImageView
+                    android:id="@+id/iv_evaluate"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="15dp"
+                    android:background="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/iv_evaluate"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_shopname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="评价商品" />
+
+                    <TextView
+                        android:id="@+id/tv_evaluate_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/red"
+                        android:text="138" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View style="@style/view"></View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="描述相符:"></TextView>
+
+                <com.utils.view.RatingBar
+                    android:id="@+id/rb_describe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    app:starCount="5"
+                    app:starEmpty="@mipmap/rating_small_empty"
+                    app:starFill="@mipmap/rating_small_full"
+                    app:starHalf="@mipmap/rating_small_half"
+                    app:starImageSize="15dp"
+                    app:starPadding="4dp"
+                    app:starStep="3"
+                    app:stepSize="Full"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/ed_evaluate"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:hint="长度在1-500个字之间\n写下购买体会或使用过程中带来的帮助等，可以为其他小\n伙伴提供参考"
+                android:textSize="10dp" />
+
+            <Button
+                android:id="@+id/btn_add_evaluate"
+                android:layout_width="180dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@mipmap/iv_evaluate_add"
+                android:drawablePadding="8dp"
+                android:text="添加晒单图片" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:choiceMode="singleChoice"
+                android:divider="@null"
+                android:fadingEdge="none"
+                android:listSelector="@android:color/transparent"
+                android:scrollbarStyle="outsideOverlay"
+                app:layoutManager="android.support.v7.widget.GridLayoutManager"
+                app:spanCount="4"
+                tools:listitem="@layout/ip_list_item_image"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <CheckBox
+                    android:id="@+id/iv_ish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:background="@drawable/evaluate_ish_selector"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:drawablePadding="8dp"
+                    android:gravity="center"
+                    android:text="匿名评价" />
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="25dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="服务态度:"></TextView>
+
+                <com.utils.view.RatingBar
+                    android:id="@+id/rb_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    app:starCount="5"
+                    app:starEmpty="@mipmap/rating_small_empty"
+                    app:starFill="@mipmap/rating_small_full"
+                    app:starHalf="@mipmap/rating_small_half"
+                    app:starImageSize="15dp"
+                    app:starPadding="4dp"
+                    app:starStep="3"
+                    app:stepSize="Full"
+                    android:layout_gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="25dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="发货速度:"></TextView>
+                <com.utils.view.RatingBar
+                    android:id="@+id/rb_deliver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    app:starCount="5"
+                    app:starEmpty="@mipmap/rating_small_empty"
+                    app:starFill="@mipmap/rating_small_full"
+                    app:starHalf="@mipmap/rating_small_half"
+                    app:starImageSize="15dp"
+                    app:starPadding="4dp"
+                    app:starStep="3"
+                    app:stepSize="Full"
+                    android:layout_gravity="center_vertical"
+                    />
+            </LinearLayout>
+            
+            <Button
+                android:id="@+id/btn_evaluate_commit"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_nor_down"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:layout_marginBottom="60dp"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

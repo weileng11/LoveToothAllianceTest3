@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_specialist"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/seek_specialist" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/iv_specialist"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_seek_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="张三   xxxx" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.utils.view.RatingBar
+                        android:id="@+id/rb_seek"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:starCount="5"
+                        app:starEmpty="@mipmap/rating_small_empty"
+                        app:starFill="@mipmap/rating_small_full"
+                        app:starHalf="@mipmap/rating_small_half"
+                        app:starImageSize="15dp"
+                        app:starPadding="4dp"
+                        app:starStep="2.5"
+                        app:stepSize="Half"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_seek_recodename"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="4.6分" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="张三   xxxx" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_seek_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:text="9.7KM" />
+
+            <Button
+                android:id="@+id/btn_seek_xd"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/btn_nor_down"
+                android:text="下单" />
+
+        </RelativeLayout>
+
+        <com.textview.ExpandableTextView
+            android:id="@+id/etv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="12dp"
+            android:text="@string/poem_0"
+            android:textSize="12dp">
+
+
+        </com.textview.ExpandableTextView>
+    </LinearLayout>
+</LinearLayout>

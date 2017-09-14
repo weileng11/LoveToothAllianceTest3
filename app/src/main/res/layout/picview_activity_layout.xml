@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+  
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_pic"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" />
+
+      <TextView 
+        android:id="@+id/tv_indicator"
+        android:layout_marginTop="5dp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/ll_indictor"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp">
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

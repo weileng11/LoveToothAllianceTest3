@@ -1,0 +1,165 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lovetoothalliance.app.widget.TopBarLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"></com.lovetoothalliance.app.widget.TopBarLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:background="@color/red"
+        android:stretchColumns="0,1,2,3">
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:text="团队" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+
+                android:gravity="center"
+                android:text="一级成员" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:text="二级成员" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:text="三级成员" />
+        </TableRow>
+
+
+        <TableRow>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:text="人数(人)" />
+
+
+            <TextView
+                android:id="@+id/tv_one_npop"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:textColor="@color/red" />
+
+
+            <TextView
+                android:id="@+id/tv_two_npop"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:textColor="@color/red" />
+
+            <TextView
+                android:id="@+id/tv_three_npop"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:textColor="@color/red" />
+
+
+        </TableRow>
+
+
+        <TableRow>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:text="销售总额(元)" />
+
+
+            <TextView
+                android:id="@+id/tv_one_sell"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:textColor="@color/red"
+                android:gravity="center"
+                 />
+
+
+            <TextView
+                android:id="@+id/tv_two_sell"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:gravity="center"
+                android:textColor="@color/red"
+                android:text="画家" />
+
+            <TextView
+                android:id="@+id/tv_three_sell"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="0.5dp"
+                android:background="#ffffffff"
+                android:textColor="@color/red"
+                android:gravity="center"
+                android:text="画家" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center_horizontal"
+        android:text="xxxxxx团队"
+        android:textSize="20dp" />
+
+    <com.utils.view.MyListview
+        android:id="@+id/team_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.utils.view.MyListview>
+</LinearLayout>

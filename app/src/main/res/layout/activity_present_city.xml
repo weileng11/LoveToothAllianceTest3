@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:background="@mipmap/iv_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:text="当前城市-广州市" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.lovetoothalliance.app.widget.ClearEditText
+        android:id="@+id/et_msg_search"
+        android:layout_width="match_parent"
+        android:layout_height="48.0dip"
+        android:background="@drawable/base_edit_input"
+        android:drawableLeft="@drawable/icon_msg_search"
+        android:drawablePadding="10dp"
+        android:hint="@string/city_search_hint"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:singleLine="true" />
+
+    <RelativeLayout
+        android:id="@+id/layout_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_msg_search"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/city_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:background="@drawable/content_bg"
+            android:orientation="horizontal" >
+
+
+            <LinearLayout
+                android:id="@+id/ll_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="已定位城市"
+                    android:textSize="18dp" />
+
+                <View
+                    style="@style/view"
+                    android:layout_marginTop="10dp"></View>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_location"
+                android:layout_width="wrap_content"
+                android:layout_below="@id/ll_location"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="定位失败,请点击重试" />
+
+            <LinearLayout
+                android:id="@+id/ll_zjcity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_location"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="最近访问的城市"
+                    android:textSize="18dp" />
+
+                <View
+                    style="@style/view"
+                    android:layout_marginTop="10dp"></View>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_city"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/ll_zjcity"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="广州市" />
+
+            <LinearLayout
+                android:id="@+id/ll_rm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_city"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="热门城市"
+                    android:textSize="18dp" />
+
+                <View
+                    style="@style/view"
+                    android:layout_marginTop="10dp"></View>
+
+            </LinearLayout>
+
+            <com.utils.view.MyGridView
+                android:id="@+id/gv_city"
+                android:layout_below="@id/ll_rm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="3"></com.utils.view.MyGridView>
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/gv_city"
+                android:cacheColorHint="#00000000"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@+id/tv_mid_letter"
+                android:layout_width="80.0dip"
+                android:layout_height="80.0dip"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:background="@drawable/letter_mid_view_background"
+                android:gravity="center"
+                android:padding="5dip"
+                android:textColor="@color/red"
+                android:textSize="35.0dip"
+                android:visibility="invisible" />
+
+            <!-- 加载数据库时间太长 -->
+
+            <include
+                android:id="@+id/citys_list_load"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                layout="@layout/base_load_empty_layout" />
+
+
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/search_content_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ListView
+                android:id="@+id/search_list"
+                style="@style/base_listview_style"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:cacheColorHint="#00000000"
+                android:focusableInTouchMode="true"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/search_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10.0dip"
+                android:drawableTop="@drawable/icon_result"
+                android:drawablePadding="50dp"
+                android:text="亲，貌似没有找到额……"
+                android:visibility="gone" />
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+        <com.lovetoothalliance.app.widget.MyLetterSortView
+            android:id="@+id/right_letter"
+            android:layout_width="25dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent" />
+    </RelativeLayout>
+</LinearLayout>

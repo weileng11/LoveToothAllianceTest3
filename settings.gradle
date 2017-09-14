@@ -1,0 +1,6 @@
+include ':app', ':easeui', ':imagepicker', ':okhttp_http',':textview_library',':utils'
+//include ':COMMONLIBRARY'
+//project(':COMMONLIBRARY').projectDir = new File('E:/my studio/COMMONLIBRARY/COMMONLIBRARY')
+//include 'COMMONLIBRARY:okhttp_http', 'COMMONLIBRARY:utils',
+//        'COMMONLIBRARY:textview_library', 'COMMONLIBRARY:photoview',
+//        'COMMONLIBRARY:imagepicker'

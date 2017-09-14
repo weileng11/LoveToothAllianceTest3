@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/rd_group"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_index"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/home_selector"
+            android:text="@string/home"/>
+
+        <RadioButton
+            android:id="@+id/rb_record"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/recoder_selector"
+            android:text="@string/record"/>
+
+        <RadioButton
+            android:id="@+id/rb_message"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/message_selector"
+            android:text="@string/message"/>
+
+        <RadioButton
+            android:id="@+id/rb_my"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/my_selector"
+            android:text="@string/my" />
+    </RadioGroup>
+
+    <com.lovetoothalliance.app.widget.HomeViewPager
+        android:id="@+id/m_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rd_group"
+        android:layout_alignParentTop="true" >
+    </com.lovetoothalliance.app.widget.HomeViewPager>
+</RelativeLayout>

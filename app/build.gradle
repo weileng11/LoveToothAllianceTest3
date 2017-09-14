@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        applicationId "com.lovetoothalliance.app"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.Explain.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    signingConfigs {
+        config {
+            keyAlias 'lovetooth'
+            keyPassword 'lovetooth123'
+            storeFile file(projectDir.parent + '/lovetooth.jks')
+            storePassword 'lovetooth123'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        def file = variant.outputs[0].outputFile
+        variant.outputs[0].outputFile = new File(file.parent,
+                file.name.replace("app-release.apk", "lovetooth_" + defaultConfig.versionName + ".apk"))
+    }
+
+    //环信
+    useLibrary 'org.apache.http.legacy'
+}
+
+tasks.getByName("build")<<{
+    copy {
+        from "build/outputs/apk/"+"lovetooth_${VERSION_NAME}.apk"
+        into projectDir.parent+"/apks"
+    }
+}
+
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:24.0.0'
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.j256.ormlite:ormlite-core:4.48'
+    compile 'com.j256.ormlite:ormlite-android:4.48'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.youth.banner:banner:1.4.9'
+    compile files('libs/android-viewbadger.jar')
+    //    compile project(':COMMONLIBRARY:photoview')
+    //高德地图
+    compile files('libs/AMap_Location_V3.5.0_20170731.jar')
+    compile files('libs/Android_Map3D_SDK_V5.2.1_20170630.jar')
+    //微信支付
+    //    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    //    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:1.3.4'
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.1.6'
+    //收货地址的城市选择
+    compile 'com.smarttop:jd-address:1.1.0'
+    //适配库
+    compile 'com.zhy:autolayout:1.4.3'
+    //自定义了一个通用的Item布局，只需一行代码就可以根据需要添加任意个item。
+    compile 'com.maiml:baseitemlayoutlibrary:2.2.3'
+    //引导界面轮播  详细使用：https://github.com/bingoogolapple/BGABanner-Android#%E6%89%93%E8%B5%8F%E6%94%AF%E6%8C%81 (引导只支持本地图片)
+    compile 'com.android.support:support-v4:24.0.0'
+    compile 'cn.bingoogolapple:bga-banner:2.1.7@aar'
+    //环信 (直接导包吧)
+    //    compile 'com.google.android.gms:play-services-gcm:9.4.0'
+    //    compile 'com.hyphenate:hyphenate-sdk:3.3.0'
+    compile project(':easeui')
+    compile 'com.android.support:multidex:1.0.1'
+    compile project(':imagepicker')
+    compile project(':okhttp_http')
+    compile project(':textview_library')
+    compile project(':utils')
+}

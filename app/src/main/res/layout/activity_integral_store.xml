@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+  <com.lovetoothalliance.app.widget.TopBarLayout
+      android:id="@+id/topbar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+  </com.lovetoothalliance.app.widget.TopBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+          
+            <RelativeLayout
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <com.utils.view.CircleImageView
+                    android:id="@+id/img_is_head"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    ></com.utils.view.CircleImageView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@id/img_is_head"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的积分"
+                            />
+                        <TextView
+                            android:id="@+id/tv_jf_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/red"
+                            android:text="3300"
+                            />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已连续签到：2"
+                        />
+
+                </LinearLayout>
+                
+                <Button
+                    android:id="@+id/btn_sign"
+                    android:layout_width="80dp"
+                    android:layout_height="60dp"
+                    android:text="签到"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/btn_nor_down"
+                    android:layout_marginRight="10dp"
+                    />
+            </RelativeLayout>
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="70dp"
+               android:background="@mipmap/integral_store_bg"
+               android:layout_marginTop="10dp"
+               android:layout_marginBottom="10dp"
+               />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+
+                >
+                
+                <ImageView
+                    android:id="@+id/img_jf_gift"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@mipmap/intergral_gift"
+
+                    />
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_gravity="center"
+                    android:text="积分好礼"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/red"
+                ></View>
+
+            <com.utils.view.MyGridView
+                android:id="@+id/gv_integral_store"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:numColumns="2"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                ></com.utils.view.MyGridView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
